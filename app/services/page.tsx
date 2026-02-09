@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react'
 
-export default function ServicesPage() { // Component name Capital letter e dewa bhalo
+export default function ServicesPage() {
   const data = [
     {
       id: "1",
