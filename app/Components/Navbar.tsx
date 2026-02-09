@@ -1,9 +1,15 @@
+"use client";
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 export default function Navbar() {
+  const pathname = usePathname();
+  console.log(pathname, pathname.includes("dashboard"));
+  if(!pathname.includes("dashboard"))
+  {
   return (
-   <nav className='flex justify-center'>
+    <nav className='flex justify-center'>
           <ul className='flex justify-between gap-10'>
             <Link href="/">
              <li>Home</li>
@@ -20,4 +26,9 @@ export default function Navbar() {
           </ul>
         </nav>
   )
+  }
+  else{
+    return <></>
+  }
+ 
 }
