@@ -42,7 +42,8 @@ export default async function serviceDetailPage({ params }) {
     const {id} = await params;
     const singleData = data.find((d) => d.id == id);
 
-  return (
+    if(singleData){
+    return (
     <div>
       <h1>ServiceDetailPage</h1>
       <p>ID: {id} </p>
@@ -50,4 +51,13 @@ export default async function serviceDetailPage({ params }) {
       <img src={singleData?.serviceImage} />
     </div>
   )
+    }
+    else {
+      return(
+           <> 
+      <p>Page not found</p></>
+      )
+    
+    }
+  
 }
